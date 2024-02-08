@@ -15,7 +15,6 @@ import IndicadorTwo from "../../assets/IndicadorTwo";
 import HandOne from "../../assets/HandOne";
 import HandFound from "../../assets/HandFound";
 import HandTwo from "../../assets/HandTwo";
-import Whatsapp from "../../assets/whatsapp";
 import IconCardOne from "../../assets/IconCardOne";
 import IconCardTwo from "../../assets/IconCardTwo";
 import IconCardThree from "../../assets/IconCardThree";
@@ -29,6 +28,7 @@ import Cintas from "../../assets/cintas.gif";
 import Insta from "../../assets/Insta.svg";
 import Link from "../../assets/Link.svg";
 import animation from "../../assets/v-vank-logo-animation 2.png";
+import Whatsapp from '../../assets/Whatsapp'
 
 const Home = () => {
   return (
