@@ -28,7 +28,7 @@ const Header = () => {
     <div className="bg-white text-black fixed top-0 left-0 right-0 shadow-lg z-50">
       <div className="px-7 min-h-[56px] flex justify-between items-center  xl:pl-20 2xl:pl-32 2xl:px-12">
         <VankLogo />
-        <ul className="relative lg:flex text-lg 2xl:mr-28 hidden transition-all duration-300 ">
+        <ul className="relative lg:flex justify-center items-center text-lg 2xl:mr-28 hidden transition-all duration-300 ">
           <li
             className="font-normal text-[#000000] my-7 md:my-0 md:ml-2 text-sm lg:text-base flex flex-col items-center min-w-[84px]"
             onMouseEnter={(e) => handleMouseEnter(0, e.target.offsetWidth)}
@@ -37,7 +37,7 @@ const Header = () => {
             <a href="#">Personas</a>
             <Indicador
               className={`${
-                indicatorPosition === 0 ? `w-[100%]` : `w-[0%]`
+                indicatorPosition === 0 ? `w-[100%]` : `w-0 h-0`
               } transition-all duration-300`}
             />
           </li>
@@ -49,7 +49,7 @@ const Header = () => {
             <a href="#">Negocios</a>
             <Indicador
               className={`${
-                indicatorPosition === 1 ? `w-[100%]` : `w-[0%]`
+                indicatorPosition === 1 ? `w-[100%]` : `w-0 h-0`
               } transition-all duration-300`}
             />
           </li>
@@ -61,7 +61,7 @@ const Header = () => {
             <a href="#">VankCard</a>
             <Indicador
               className={`${
-                indicatorPosition === 2 ? `w-[100%]` : `w-[0%]`
+                indicatorPosition === 2 ? `w-[100%]` : `w-0 h-0`
               } transition-all duration-300`}
             />
           </li>
@@ -73,7 +73,7 @@ const Header = () => {
             <a href="#">VankVersity</a>
             <Indicador
               className={`${
-                indicatorPosition === 3 ? `w-[100%]` : `w-[0%]`
+                indicatorPosition === 3 ? `w-[100%]` : `w-0 h-0`
               } transition-all duration-300`}
             />
           </li>
@@ -85,7 +85,7 @@ const Header = () => {
             <a href="#">Compañia</a>
             <Indicador
               className={`${
-                indicatorPosition === 4 ? `w-[100%]` : `w-[0%]`
+                indicatorPosition === 4 ? `w-[100%]` : `w-0 h-0`
               } transition-all duration-300`}
             />
           </li>
@@ -97,7 +97,7 @@ const Header = () => {
             <a href="#">Contacto</a>
             <Indicador
               className={`${
-                indicatorPosition === 5 ? `w-[100%]` : `w-[0%]`
+                indicatorPosition === 5 ? `w-[100%]` : `w-0 h-0`
               } transition-all duration-300`}
             />
           </li>
