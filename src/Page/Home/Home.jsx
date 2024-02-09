@@ -1,11 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import {
+  Link as Links,
+  Button,
+  Element,
+  Events,
+  animateScroll as scroll,
+  scrollSpy,
+} from "react-scroll";
+
 import Header from "./Header/Header";
 import People from "../../assets/People";
-import Arrow from "../../assets/Arrow";
-import Money from "../../assets/Money";
 import VankLogo from "../../assets/VankLogo";
 import SignsTwo from "../../assets/SignsTwo";
 import WalletFund from "../../assets/WalletFund";
+
+import Arrow from "../../assets/Arrow";
+import Money from "../../assets/Money";
 import Wallet from "../../assets/Wallet";
 import Tether from "../../assets/Tether";
 
@@ -28,59 +38,83 @@ import Cintas from "../../assets/cintas.gif";
 import Insta from "../../assets/Insta.svg";
 import Link from "../../assets/Link.svg";
 import animation from "../../assets/v-vank-logo-animation 2.png";
-import Whatsapp from '../../assets/Whatsapp'
+import Whatsapp from "../../assets/Whatsapp";
+import Vank_Short from "../../assets/Animacion_Vank_Short_WP.mp4";
+import LogoAnimation from "../../assets/v-vank-logo-animation.gif";
+
+import "./Home.css";
 
 const Home = () => {
+  const [activeSection, setActiveSection] = useState("section0");
+
+  // useEffect(() => {
+  //   Events.scrollEvent.register("begin", function () {
+  //     console.log("begin", arguments);
+  //   });
+
+  //   Events.scrollEvent.register("end", function () {
+  //     console.log("end", arguments);
+  //   });
+
+  //   return () => {
+  //     Events.scrollEvent.remove("begin");
+  //     Events.scrollEvent.remove("end");
+  //   };
+  // }, []);
+
+  const handleSetActive = (to) => {
+    setActiveSection(to);
+  };
+
   return (
     <div>
-      <Header />
-      <div className="w-full min-h-[620px] mx-auto text-center flex justify-center">
-        <div className="w-1/2 bg-[#EDEDED] flex justify-center items-center">
-          <div className="w-[488px] h-[415.55px] flex flex-col justify-center mt-6">
-            <h2 className="text-[46px] font-bold text-left ml-8">This is</h2>
-            <VankLogo className='w-[488px] h-[167px] mb-3' />
-            <p className="text-lg text-[#000000] mb-10">Gestion tu dinero de forma sencilla y segura</p>
-            <div className="flex justify-center items-center gap-3">
-              <button className="py-[6px] px-6 bg-[#FFED00] text-[#000000] font-bold rounded-[24px]">Iniciar sesión</button>
-              <button className="py-[6px] px-6  text-[#000000] font-bold">Regístrate</button>
-            </div>
-          </div>
-        </div>
-        <div className="w-1/2 bg-[#FFED00] flex justify-center items-center">
-          <People />
-        </div>
+      <Header handleSetActive={handleSetActive} activeSection={activeSection} />
+      <div
+        className="Banner w-full min-h-full  mx-auto text-center flex justify-center relative mt-14 2xl:mt-0"
+        name="section0"
+      >
+        <video
+          src={Vank_Short}
+          autoPlay
+          loop
+          muted
+          className="w-full h-full object-cover"
+        />
       </div>
 
-      <div className="container max-w-[996px] pt-20 pb-16 mx-auto flex justify-center items-center bg-[#FFFFFF] relative">
-        <div className="w-1/2 flex flex-col justify-center items-start relative">
-          <div className="relative flex justify-center items-center">
-            <Wallet className="z-20" />
-            <WalletFund className="absolute -bottom-[38px] -left-1 " />
+      <div
+        className="w-full lg:max-w-[996px] p-12  lg:pt-20 pb-2 lg:pb-16 mx-auto flex sm:flex-row flex-col justify-center items-center bg-[#FFFFFF] relative"
+        name="section1"
+      >
+        <div className="lg:w-1/2 flex flex-col justify-center items-start ">
+          <div className="relative flex items-center mb-8 xl:w-[385px] xl:h-[378px] md:w-[300px] md:h-[200px] w-[300px] h-[200px] ">
+            <Wallet className="z-20 w-full h-full object-cover" />
+            <WalletFund className="absolute xl:-bottom-[50px] -bottom-[50px] left-[46px] xl:-left-1 w-[203px] h-[250px] xl:w-[385px] xl:h-[378px]  object-cover" />
           </div>
         </div>
-        <div className="w-1/2  flex flex-col justify-center items-end ">
-          <div className="flex flex-col  gap-y-4">
-            <h2 className="text-[58px] font-bold text-[#000000] ">
+        <div className="lg:w-1/2 flex flex-col justify-center items-end mt-8 lg:mt-0">
+          <div className="flex flex-col justify-center items-center gap-y-2 lg:gap-y-5">
+            <h2 className="text-3xl sm:text-[30px] lg:text-[58px] font-bold text-[#000000] ">
               Nuestra misión
             </h2>
-            <div className="flex flex-col justify-center items-center leading-none ">
-              <p className="text-[30px] font-bold text-[#000000]">
+            <div className="flex flex-col justify-center items-center leading-8 lg:leading-none ">
+              <p className="text-lg sm:text-[24px] lg:text-[30px] font-bold text-[#000000]">
                 Eliminar barreras
               </p>
-              <p className="text-[30px] font-bold text-[#000000]">
+              <p className="text-lg sm:text-[18px] lg:text-[30px] font-bold text-center text-[#000000]">
                 Simplificar procesos financieros
               </p>
-              <p className="text-[30px] font-bold text-[#000000]">
+              <p className="text-lg sm:text-[18px] lg:text-[30px] font-bold text-[#000000]">
                 Recortar distancias
               </p>
             </div>
-            <div className="flex justify-center items-center gap-4">
+            <div className="flex justify-center items-center gap-4 px-2">
               <SignsTwo />
               <div className="text-center leading-none">
-                <p className="text-[33px] font-normal text-[#000000]">
+                <p className="text-lg sm:text-[18px] lg:text-[33px] font-normal text-[#000000]">
                   Brindamos soluciones
                 </p>
-                <p className="text-[33px] font-bold text-[#000000]">
+                <p className="text-lg sm:text-[18px] lg:text-[33px] font-bold text-[#000000]">
                   financieras accesibles
                 </p>
               </div>
@@ -91,62 +125,72 @@ const Home = () => {
         <div className="w-[133px] border border-[#EDEDED] absolute bottom-0" />
       </div>
 
-      <div className="max-w-[999px] pt-8 pb-14 mx-auto flex justify-center bg-transparent relative">
-        <div className="w-[211px] h-[260px] flex absolute left-0">
-          <Arrow className="absolute -right-[99px] top-12 z-10" />
-          <Tether className="z-10" />
-          <div className="w-[210px] h-[234px]  absolute bottom-[6px]  bg-[#8BE593] rounded-full rotate-[40deg]" />
+      <div
+        className="w-[95%] md:w-full lg:max-w-[996px] p-12  lg:pt-20 pb-0 lg:pb-16 mx-auto flex  justify-center bg-transparent relative "
+        name="section2"
+      >
+        <div className="md:ml-12 lg:ml-0 lg:w-[211px] lg:h-[260px] md:w-[111px]  md:h-[160px]  w-[90px]  h-[110px] flex flex-col  justify-center items-center absolute left-0 ">
+          <Arrow className="absolute -right-[30px] sm:-right-[170px] md:-right-[180px] lg:-right-[99px] lg:top-12 top-0 z-10 w-[40px] sm:w-[230px] h-[20px] md:h-[30px] lg:w-[106px] " />
+          <Tether className="z-10 " />
         </div>
 
         <div className="flex flex-col justify-center items-center">
-          <VankLogo className="w-[387.83px] h-[132.73px] mb-8" />
-          <p className="text-[32px] text-[#000000]">
+          <VankLogo className="lg:w-[387.83px] lg:h-[132.73px] sm:w-full sm:h-[59px] mb-3 sm:mb-6" />
+          <p className="text-[13px] sm:text-[28px] text-[#000000] mb-1 sm:mb-1">
             Recibiendo tus <span className="font-bold">USDT</span> para
           </p>
-          <p className="text-[32px] text-[#000000]">
+          <p className="text-[13px] sm:text-[28px] text-[#000000]">
             hacerlas llegar en <span className="font-bold">USD</span>
           </p>
         </div>
 
-        <div className="w-[211px] h-[260px] absolute right-0 flex justify-center items-center">
+        <div className="md:mr-12 lg:mr-0 lg:w-[211px] lg:h-[260px] md:w-[111px]  md:h-[160px] w-[90px]  h-[110px] absolute right-0 flex justify-center items-center ">
+          <Arrow className="absolute -left-[30px] sm:-left-[149px] md:-left-[160px] lg:-left-[99px] md:top-2 lg:top-14 top-0 w-[40px] sm:w-[200px] h-[20px] md:h-[30px] lg:w-[106px] rotate-[18deg] md:rotate-[20deg] z-10" />
           <Money className="z-10" />
-          <Arrow className="absolute -left-[99px] top-14 rotate-[18deg] z-10" />
-          <div className="w-[220.25px] h-[243.73px]  absolute flex -left-1 p-1">
-            <div className="w-full h-full rounded-full bg-[#FFED00]" />
-          </div>
         </div>
       </div>
 
-      <div className="max-w-[999px] pt-2 pb-2 mx-auto flex justify-center items-center">
+      <div
+        className="w-full lg:max-w-[996px] pt-12 lg:pt-20 pb-2 mx-auto flex justify-center items-center"
+        name="section3"
+      >
         <div className="w-1/2 h-full flex flex-col justify-center items-center space-y-6">
-          <p className="max-w-[386px] text-[27px] text-center leading-8">
+          <p className="max-w-[386px] text-base sm:text-[20px] lg:text-[27px] text-center 2xl:leading-8">
             Hacemos llegar tus pagos a{" "}
             <span className="font-bold">cualquier parte del mundo</span>
           </p>
-          <div className="w-[385px] h-[80.21px]">
+          <div className="lg:w-[385px] lg:h-[80.21px]">
             <img src={M} className="w-full h-full" alt="" />
           </div>
         </div>
         <div className="w-1/2 h-full flex justify-center items-center">
-          <img src={VankMundo} alt="" className="w-[588px]" />
+          <img
+            src={VankMundo}
+            alt=""
+            className="lg:w-[588px] sm:w-[260px] w-full"
+          />
         </div>
       </div>
 
-      <div className="max-w-[999px] pt-8 pb-14 mx-auto flex justify-center items-center">
-        <div className="w-1/2 h-full flex flex-col justify-center items-center">
+      <div
+        className="w-full lg:max-w-[996px] pt-8 pb-14 mx-auto flex sm:flex-row flex-col gap-y-5 md:gap-y-0 justify-center items-center"
+        name="section4"
+      >
+        <div className="w-1/2 h-full flex flex-col justify-center items-center ">
           <div className="relative  leading-none">
-            <p className="text-[40px] text-left">Aquí todo es</p>
-            <p className="text-[55px] font-bold relative z-10">tan facil y rápido</p>
-            <div className="absolute w-[221px] bottom-[33%]">
+            <p className="text-[25px] sm:text-[30px] md:text-[35px] 2xl:text-[40px] text-left mb-1 sm:mb-2 md:mb-4 2xl:mb-7">Aquí todo es</p>
+            <p className="text-[23px] sm:text-[35px] md:text-[43px] 2xl:text-[55px] font-bold relative z-10 mb-1 sm:mb-2 md:mb-4 2xl:mb-7">
+              tan facil y rápido
+            </p>
+            <div className="absolute 2xl:w-[221px] md:w-[160px] sm:w-[135px] w-[90px] bottom-[35%] sm:bottom-[26%] md:bottom-[26%] 2xl:bottom-[27%] ">
               <IndicadorTwo className="w-full h-full" />
             </div>
-            <p className="text-[55px] font-bold">como textear</p>
+            <p className="text-[23px] sm:text-[35px] md:text-[43px] 2xl:text-[55px] font-bold">como textear</p>
           </div>
         </div>
         <div className="w-1/2 h-full flex justify-center items-center gap-3">
-          {/* <img src={VankMundo} alt="" className="w-[588px]" /> */}
-          <div className="w-[230px] h-[231.24px] rounded-[8px] bg-[#EDEDED] flex flex-col justify-center items-center gap-y-2">
-            <p className="w-[139px] p-1 text-lg text-center leading-none">
+          <div className="w-[190px] h-[190px] sm:w-[230px] sm:h-[200px] md:w-[230px] md:h-[231.24px] rounded-[8px] bg-[#EDEDED] flex flex-col justify-center items-center gap-y-2">
+            <p className="w-[139px] p-1 text-base md:text-lg text-center leading-none">
               Regístrate y crea tu cuenta
             </p>
             <div className="relative flex justify-center items-center">
@@ -154,8 +198,8 @@ const Home = () => {
               <HandFound className="absolute" />
             </div>
           </div>
-          <div className="w-[230px] h-[231.24px] rounded-[8px] bg-[#EDEDED] flex flex-col justify-center items-center gap-y-2">
-            <p className="w-[139px] p-2 text-lg text-center leading-none">
+          <div className="w-[190px] h-[190px]  sm:w-[230px] sm:h-[200px] md:w-[230px] md:h-[231.24px] rounded-[8px] bg-[#EDEDED] flex flex-col justify-center items-center gap-y-2">
+            <p className="w-[139px] p-1 text-base md:text-lg text-center leading-none">
               Recarga y disfruta
             </p>
             <div className="relative flex justify-center items-center">
@@ -166,7 +210,10 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="max-w-[999px] pt-8 pb-32 mx-auto flex flex-col justify-center items-center gap-y-14 ">
+      <div
+        className="max-w-[999px] pt-8 pb-32 mx-auto flex flex-col justify-center items-center gap-y-14 "
+        name="section5"
+      >
         <div className="relative w-[540px]">
           <h2 className="font-bold text-[48px] text-center leading-none relative z-10">
             Una app con una tasa alta en{" "}
@@ -215,7 +262,10 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="relative w-full h-[500px] pt-32 bg-[#EDEDED] flex justify-center items-center pb-32">
+      <div
+        className="relative w-full h-[500px] pt-32 bg-[#EDEDED] flex justify-center items-center pb-32"
+        name="section6"
+      >
         <div className="max-w-[999px] mx-auto flex justify-center gap-[20px] absolute -top-12">
           <div className="w-1/2 flex justify-center items-center ">
             <img src={HomeCard} alt="" className="w-full h-full " />
@@ -246,7 +296,9 @@ const Home = () => {
               className="object-contain z-20 hover:scale-[1.18] hover:rotate-[10deg] hover:relative hover:transition-all hover:duration-500 duration-500 cursor-pointer "
               alt=""
             />
-            <p className="absolute bottom-[9%] left-[23%] text-[16px] font-bold">Premium Card</p>
+            <p className="absolute bottom-[9%] left-[23%] text-[16px] font-bold">
+              Premium Card
+            </p>
           </div>
           <div className="w-[35%] h-[100%] absolute left-[24.3%] ">
             <img
@@ -254,7 +306,9 @@ const Home = () => {
               className="object-contain z-20 hover:scale-[1.18] hover:rotate-[10deg] hover:relative hover:transition-all hover:duration-500 duration-500 cursor-pointer "
               alt=""
             />
-            <p className="absolute bottom-[9%] left-[23%] text-[16px] font-bold">Elite Card</p>
+            <p className="absolute bottom-[9%] left-[23%] text-[16px] font-bold">
+              Elite Card
+            </p>
           </div>
           <div className="w-[35%] h-[100%] absolute left-[44.3%] ">
             <img
@@ -262,7 +316,9 @@ const Home = () => {
               className="object-contain z-50 hover:scale-[1.18] hover:rotate-[10deg] hover:relative hover:transition-all hover:duration-500 duration-500 cursor-pointer "
               alt=""
             />
-            <p className="absolute bottom-[9%] left-[23%] text-[16px] font-bold">Signature Black</p>
+            <p className="absolute bottom-[9%] left-[23%] text-[16px] font-bold">
+              Signature Black
+            </p>
           </div>
           <div className="w-[35%] h-[100%] absolute left-[64.3%] z-10">
             <img
@@ -270,12 +326,17 @@ const Home = () => {
               className="object-contain hover:scale-[1.18] hover:rotate-[10deg] hover:relative hover:transition-all hover:duration-500 duration-500 cursor-pointer "
               alt=""
             />
-            <p className="absolute bottom-[9%] left-[23%] text-[16px] font-bold">Tarjeta Vank</p>
+            <p className="absolute bottom-[9%] left-[23%] text-[16px] font-bold">
+              Tarjeta Vank
+            </p>
           </div>
         </div>
       </div>
 
-      <div className="max-w-[999px] pt-32 pb-32 mx-auto flex justify-center items-center gap-5 ">
+      <div
+        className="max-w-[999px] pt-32 pb-32 mx-auto flex justify-center items-center gap-5 "
+        name="section7"
+      >
         <img src={Coffe} alt="" />
         <div className="w-[691px] h-full bg-[#FFED00] p-[20px] rounded-[24px]">
           <div className="w-full  grid grid-cols-2 gap-x-5 gap-y-3">
@@ -285,7 +346,7 @@ const Home = () => {
               </label>
               <input
                 type="text"
-                id=""
+                name=""
                 className="rounded-[16px] h-[32px] w-full focus:outline-none px-3"
               />
             </div>
@@ -295,7 +356,7 @@ const Home = () => {
               </label>
               <input
                 type="text"
-                id=""
+                name=""
                 className="rounded-[16px] h-[32px] w-full focus:outline-none px-3"
               />
             </div>
@@ -305,7 +366,7 @@ const Home = () => {
               </label>
               <input
                 type="text"
-                id=""
+                name=""
                 className="rounded-[16px] h-[32px] w-full focus:outline-none px-3"
               />
             </div>
@@ -315,7 +376,7 @@ const Home = () => {
               </label>
               <input
                 type="text"
-                id=""
+                name=""
                 className="rounded-[16px] h-[32px] w-full focus:outline-none px-3"
               />
             </div>
@@ -326,7 +387,6 @@ const Home = () => {
             </label>
             <textarea
               name=""
-              id=""
               cols="30"
               rows="auto"
               className="rounded-[16px] h-[75px] w-full focus:outline-none p-2"
@@ -339,8 +399,14 @@ const Home = () => {
       </div>
 
       <footer className="w-full h-[275px] bg-[#000000] relative flex justify-center items-center">
-        <img src={Cintas} alt="" className="absolute -top-20" />
-        <img src={animation} alt="" className="" />
+        <img src={Cintas} alt="" className="absolute -top-32" />
+        <div className="w-[590px] h-[92.87px]">
+          <img
+            src={LogoAnimation}
+            alt=""
+            className="w-full h-full object-cover"
+          />
+        </div>
         <div className="flex justify-center items-center gap-5 absolute bottom-6 left-1/2 -translate-x-1/2 ">
           <p className="text-base font-normal text-[#FFED00]">
             contacto@thisisvank.com

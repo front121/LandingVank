@@ -6,10 +6,6 @@ export default {
       fontFamily: {
         sanspp: ["Object Sans", "sans-serif"],
       },
-      colors: {
-        // Agrega o modifica colores según tus necesidades
-        customCheckbox: '#6EE7B7',
-      },
     },
 
   },

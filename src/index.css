@@ -23,12 +23,12 @@
     src: url('./assets/font/PPObjectSans/PPObjectSans-Regular.ttf') format('truetype');
   }
   
-  @font-face {
+  /* @font-face {
     font-family: 'PP Object Sans';
     font-style: normal;
     font-weight: 600;
-    src: url('./assets/font/PPObjectSans/PPObjectSans-Regular.ttf') format('truetype');
-  }
+    src: url('./assets/font/PPObjectSans/PPObjectSans-') format('truetype');
+  } */
 
   @font-face {
     font-family: 'PP Object Sans';

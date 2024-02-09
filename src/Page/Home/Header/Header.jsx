@@ -4,37 +4,52 @@ import Menu from "../../../assets/Menu";
 import Indicador from "../../../assets/Indicador";
 import VankLogo from "../../../assets/VankLogo";
 
-const Header = () => {
+import { Link } from "react-scroll";
 
-    const [isMenu, setIsMenu] = useState(false);
-    const [indicatorWidth, setIndicatorWidth] = useState(0);
-    const [indicatorPosition, setIndicatorPosition] = useState(null);
-  
-    const toogleMenu = () => {
-      setIsMenu(!isMenu);
-    };
-  
-    const handleMouseEnter = (index, width) => {
-      setIndicatorPosition(index);
-      setIndicatorWidth(width);
-    };
-  
-    const handleMouseLeave = () => {
-      setIndicatorPosition(null);
-      setIndicatorWidth(0);
-    };
+const Header = ({ handleSetActive, activeSection }) => {
+  const [isMenu, setIsMenu] = useState(false);
+  const [indicatorWidth, setIndicatorWidth] = useState(0);
+  const [indicatorPosition, setIndicatorPosition] = useState(null);
+
+  const toogleMenu = () => {
+    setIsMenu(!isMenu);
+  };
+
+  const handleMouseEnter = (index, width) => {
+    setIndicatorPosition(index);
+    setIndicatorWidth(width);
+  };
+
+  const handleMouseLeave = () => {
+    setIndicatorPosition(null);
+    setIndicatorWidth(0);
+  };
 
   return (
-    <div className="bg-white text-black fixed top-0 left-0 right-0 shadow-lg z-50">
+    <div
+      className={`${
+        activeSection === "section0" ? "bg-white bg-opacity-85" : " bg-white shadow-2xl"
+      }  text-black fixed top-0 left-0 right-0 z-50 transition-all duration-500`}
+    >
       <div className="px-7 min-h-[56px] flex justify-between items-center  xl:pl-20 2xl:pl-32 2xl:px-12">
         <VankLogo />
         <ul className="relative lg:flex justify-center items-center text-lg 2xl:mr-28 hidden transition-all duration-300 ">
           <li
-            className="font-normal text-[#000000] my-7 md:my-0 md:ml-2 text-sm lg:text-base flex flex-col items-center min-w-[84px]"
+            className="font-medium text-[#000000] opacity-100 z-50 my-7 md:my-0 md:ml-2 text-sm lg:text-base flex flex-col items-center min-w-[84px] cursor-pointer"
             onMouseEnter={(e) => handleMouseEnter(0, e.target.offsetWidth)}
             onMouseLeave={handleMouseLeave}
           >
-            <a href="#">Personas</a>
+            <Link
+              activeClass="active"
+              to="section0"
+              spy={true}
+              smooth={true}
+              offset={50}
+              duration={500}
+              onSetActive={handleSetActive}
+            >
+              Personas
+            </Link>
             <Indicador
               className={`${
                 indicatorPosition === 0 ? `w-[100%]` : `w-0 h-0`
@@ -42,11 +57,21 @@ const Header = () => {
             />
           </li>
           <li
-            className="font-normal text-[#000000] my-7 md:my-0 md:ml-2 text-sm lg:text-base flex flex-col items-center  min-w-[84px]"
+            className="font-normal text-[#000000] my-7 md:my-0 md:ml-2 text-sm lg:text-base flex flex-col items-center  min-w-[84px] cursor-pointer"
             onMouseEnter={(e) => handleMouseEnter(1, e.target.offsetWidth)}
             onMouseLeave={handleMouseLeave}
           >
-            <a href="#">Negocios</a>
+            <Link
+              activeClass="active"
+              to="section1"
+              spy={true}
+              smooth={true}
+              offset={-90}
+              duration={500}
+              onSetActive={handleSetActive}
+            >
+              Negocios
+            </Link>
             <Indicador
               className={`${
                 indicatorPosition === 1 ? `w-[100%]` : `w-0 h-0`
@@ -54,11 +79,21 @@ const Header = () => {
             />
           </li>
           <li
-            className="ont-normal text-[#000000] my-7 md:my-0 md:ml-2 text-sm lg:text-base flex flex-col items-center min-w-[84px]"
+            className="ont-normal text-[#000000] my-7 md:my-0 md:ml-2 text-sm lg:text-base flex flex-col items-center min-w-[84px] cursor-pointer"
             onMouseEnter={(e) => handleMouseEnter(2, e.target.offsetWidth)}
             onMouseLeave={handleMouseLeave}
           >
-            <a href="#">VankCard</a>
+            <Link
+              activeClass="active"
+              to="section2"
+              spy={true}
+              smooth={true}
+              offset={-200}
+              duration={500}
+              onSetActive={handleSetActive}
+            >
+              VankCard
+            </Link>
             <Indicador
               className={`${
                 indicatorPosition === 2 ? `w-[100%]` : `w-0 h-0`
@@ -66,11 +101,21 @@ const Header = () => {
             />
           </li>
           <li
-            className="font-normal text-[#000000] my-7 md:my-0 md:ml-2 text-sm lg:text-base flex flex-col items-center min-w-[84px]"
+            className="font-normal text-[#000000] my-7 md:my-0 md:ml-2 text-sm lg:text-base flex flex-col items-center min-w-[84px] cursor-pointer"
             onMouseEnter={(e) => handleMouseEnter(3, e.target.offsetWidth)}
             onMouseLeave={handleMouseLeave}
           >
-            <a href="#">VankVersity</a>
+            <Link
+              activeClass="active"
+              to="section3"
+              spy={true}
+              smooth={true}
+              offset={-200}
+              duration={500}
+              onSetActive={handleSetActive}
+            >
+              VankVersity
+            </Link>
             <Indicador
               className={`${
                 indicatorPosition === 3 ? `w-[100%]` : `w-0 h-0`
@@ -78,7 +123,7 @@ const Header = () => {
             />
           </li>
           <li
-            className="font-normal text-[#000000] my-7 md:my-0 md:ml-2 text-sm lg:text-base flex flex-col items-center min-w-[84px]"
+            className="font-normal text-[#000000] my-7 md:my-0 md:ml-2 text-sm lg:text-base flex flex-col items-center min-w-[84px] cursor-pointer"
             onMouseEnter={(e) => handleMouseEnter(4, e.target.offsetWidth)}
             onMouseLeave={handleMouseLeave}
           >
@@ -90,7 +135,7 @@ const Header = () => {
             />
           </li>
           <li
-            className="font-normal text-[#000000] my-7 md:my-0 md:ml-2 text-sm lg:text-base flex flex-col items-center min-w-[84px]"
+            className="font-normal text-[#000000] my-7 md:my-0 md:ml-2 text-sm lg:text-base flex flex-col items-center min-w-[84px] cursor-pointer"
             onMouseEnter={(e) => handleMouseEnter(5, e.target.offsetWidth)}
             onMouseLeave={handleMouseLeave}
           >
