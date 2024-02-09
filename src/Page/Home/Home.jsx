@@ -78,6 +78,7 @@ const Home = () => {
           autoPlay
           loop
           muted
+          type="video/mp4"
           className="w-full h-full object-cover"
         />
       </div>
