@@ -151,15 +151,15 @@ const Home = () => {
       </div>
 
       <div
-        className="w-[95%] md:w-full lg:max-w-[996px]   lg:pt-20 pb-0 pt-10 lg:pb-16 mx-auto flex gap-4 justify-center items-center sm:hidden bg-transparent relative"
+        className="w-[95%] md:w-full lg:max-w-[996px]  lg:pt-20 pb-0 pt-10 lg:pb-16 mx-auto flex gap-4 justify-center items-center sm:hidden bg-transparent relative"
         name="section2"
       >
         <div className="flex flex-col justify-center items-center w-full h-full ">
           <VankLogo className="lg:w-[387.83px] lg:h-[132.73px] sm:w-full sm:h-[59px] mb-3 sm:mb-6" />
-          <p className="text-[13px] sm:text-[28px] text-[#000000] mb-1 sm:mb-1">
+          <p className="text-[13px] sm:text-[28px] text-center text-[#000000] mb-1 sm:mb-1">
             Recibiendo tus <span className="font-bold">USDT</span> para
           </p>
-          <p className="text-[13px] sm:text-[28px] text-[#000000]">
+          <p className="text-[13px] sm:text-[28px] text-center text-[#000000]">
             hacerlas llegar en <span className="font-bold">USD</span>
           </p>
         </div>
@@ -171,7 +171,7 @@ const Home = () => {
       </div>
 
       <div
-        className="w-full lg:max-w-[996px] pt-12 lg:pt-20 pb-2 mx-auto flex justify-center items-center"
+        className="w-[95%] md:w-full lg:max-w-[996px] pt-12 lg:pt-20 pb-2 mx-auto flex justify-center items-center"
         name="section3"
       >
         <div className="w-1/2 h-full flex flex-col justify-center items-center space-y-6">
@@ -193,26 +193,28 @@ const Home = () => {
       </div>
 
       <div
-        className="w-full lg:max-w-[996px] pt-8 pb-14 mx-auto flex sm:flex-row flex-col gap-y-5 md:gap-y-0 justify-center items-center"
+        className="w-[95%] md:w-full lg:max-w-[996px] pt-8 pb-14 mx-auto flex sm:flex-row flex-col gap-y-5 md:gap-y-0 justify-center items-center"
         name="section4"
       >
-        <div className="w-1/2 h-full flex flex-col justify-center items-center ">
+        <div className="w-full sm:w-1/2 h-full flex flex-col justify-center items-center ">
           <div className="relative  leading-none">
             <p className="text-[25px] sm:text-[30px] md:text-[35px] 2xl:text-[40px] text-left mb-1 sm:mb-2 md:mb-4 2xl:mb-7">
               Aquí todo es
             </p>
-            <p className="text-[23px] sm:text-[35px] md:text-[43px] 2xl:text-[55px] font-bold relative z-10 mb-1 sm:mb-2 md:mb-4 2xl:mb-7">
-              tan facil y rápido
-            </p>
-            <div className="absolute 2xl:w-[221px] md:w-[160px] sm:w-[135px] w-[90px] bottom-[35%] sm:bottom-[26%] md:bottom-[26%] 2xl:bottom-[27%] ">
-              <IndicadorTwo className="w-full h-full" />
+            <div className="relative">
+              <p className="text-[23px] sm:text-[35px] md:text-[43px] 2xl:text-[55px] font-bold relative z-10 mb-1 sm:mb-2 md:mb-4 2xl:mb-7">
+                tan facil y rápido
+              </p>
+              <div className="absolute 2xl:w-[221px] md:w-[160px] sm:w-[135px] w-[90px] -bottom-[2px] ">
+                <IndicadorTwo className="w-full h-full" />
+              </div>
             </div>
             <p className="text-[23px] sm:text-[35px] md:text-[43px] 2xl:text-[55px] font-bold">
               como textear
             </p>
           </div>
         </div>
-        <div className="w-1/2 h-full flex justify-center items-center gap-3">
+        <div className="w-full sm:w-1/2 h-full flex justify-center items-center gap-3">
           <div className="w-[190px] h-[190px] sm:w-[230px] sm:h-[200px] md:w-[230px] md:h-[231.24px] rounded-[8px] bg-[#EDEDED] flex flex-col justify-center items-center gap-y-2">
             <p className="w-[139px] p-1 text-base md:text-lg text-center leading-none">
               Regístrate y crea tu cuenta
@@ -235,51 +237,59 @@ const Home = () => {
       </div>
 
       <div
-        className="max-w-[999px] pt-8 pb-32 mx-auto flex flex-col justify-center items-center gap-y-14 "
+        className="w-[95%] lg:w-full xl:max-w-[996px]  lg:pt-20 pb-20 pt-10 lg:pb-16 mx-auto flex flex-col justify-center items-center gap-y-7 xl:gap-y-12 "
         name="section5"
       >
-        <div className="relative w-[540px]">
-          <h2 className="font-bold text-[48px] text-center leading-none relative z-10">
+        <div className="relative max-w-full xl:w-[540px]">
+          <div className="font-bold text-[28px] md:text-[38px] 2xl:text-[48px] text-center  leading-none z-10">
             Una app con una tasa alta en{" "}
-            <span className="font-extrabold">bienestar</span>
-          </h2>
-          <div className="absolute w-[283px] -bottom-[11px] right-16">
-            <IndicadorTwo className="w-full h-full" />
+            <span className="relative inline-block w-min ">
+              bienestar
+              <IndicadorTwo className="absolute md:-bottom-[6px] -bottom-1 w-full h-auto" />
+            </span>
           </div>
         </div>
-        <p className="w-[590px] h-[46px] text-lg text-center text-[#4C4C4C] leading-6 mb-4">
+        <p className=" w-full md:w-[590px] h-[46px] text-lg text-center text-[#4C4C4C] leading-6 mb-4">
           Una plataforma muy intuitiva que te ayudará a ahorrar tiempo y decirle
           adiós al estrés de los bancos covencionales
         </p>
-        <div className="max-w-[996px] flex justify-center items-center gap-[72px] group">
-          <div className="w-[285px] h-[324px] duration-500 hover:scale-[1.18] bg-[#FFED00] rounded-[8px] shadow-lg flex flex-col justify-center items-center gap-y-4 cursor-pointer">
+        <div className="w-full lg:max-w-[996px] grid grid-cols-2  md:flex justify-center items-center gap-7 lg:gap-[72px] group">
+          <div className="w-full h-[250px] p-2 lg:w-[285px] lg:h-[324px] duration-500 hover:scale-[1.18] hover:ml-5 md:hover:ml-0 bg-[#FFED00] rounded-[8px] shadow-lg flex flex-col justify-center items-center gap-y-4 cursor-pointer">
             <IconCardOne />
-            <div className="w-[189px] flex flex-col justify-center items-center">
-              <p className="text-lg font-bold leading-none">Procesos </p>
-              <p className="text-lg font-bold leading-none">Simplificado</p>
+            <div className=" lg:w-[189px] flex flex-col justify-center items-center">
+              <p className="text-base  md:text-lg font-bold leading-none">
+                Procesos{" "}
+              </p>
+              <p className="text-base md:text-lg font-bold leading-none">
+                Simplificado
+              </p>
             </div>
-            <p className="text-base text-[#000000]">Sí, muy, muy fácil</p>
+            <p className="text-sm md:text-base text-[#000000]">
+              Sí, muy, muy fácil
+            </p>
           </div>
 
-          <div className="w-[285px] h-[324px] duration-500 hover:scale-[1.18] bg-[#FFFFFF] rounded-[8px] shadow-lg flex flex-col justify-center items-center gap-y-4 cursor-pointer">
+          <div className="w-full h-[250px] p-2 lg:w-[285px] lg:h-[324px] duration-500 hover:scale-[1.18] hover:mr-5 md:hover:mr-0 bg-[#FFFFFF] rounded-[8px] shadow-lg flex flex-col justify-center items-center gap-y-4 cursor-pointer">
             <IconCardTwo />
-            <div className="w-[189px] flex flex-col justify-center items-center">
-              <p className="text-lg font-bold leading-none">
+            <div className="lg:w-[189px] flex flex-col justify-center items-center">
+              <p className="text-sm md:text-lg font-bold leading-none">
                 Plataforma a prueba{" "}
               </p>
-              <p className="text-lg font-bold leading-none">de mapaches</p>
+              <p className="text-sm md:text-lg font-bold leading-none">
+                de mapaches
+              </p>
             </div>
-            <p className="text-base text-[#000000] max-w-[60%] text-center leading-none">
+            <p className="text-sm md:text-base text-[#000000] max-w-[60%] text-center leading-none">
               Más seguridad en las transacciones
             </p>
           </div>
 
-          <div className="w-[285px] h-[324px] duration-500 hover:scale-[1.18] bg-[#FFED00] rounded-[8px] shadow-lg flex flex-col justify-center items-center gap-y-4 cursor-pointer">
+          <div className="w-full h-[250px] p-2 lg:w-[285px] lg:h-[324px] duration-500 hover:scale-[1.18] hover:ml-5 md:hover:ml-0 bg-[#FFED00] rounded-[8px] shadow-lg flex flex-col justify-center items-center gap-y-4 cursor-pointer">
             <IconCardThree />
-            <p className="text-lg font-bold leading-none">
+            <p className="text-sm md:text-lg font-bold leading-none">
               Bienvenido al futuro
             </p>
-            <p className="text-base text-[#000000] max-w-[60%] text-center font-normal leading-none">
+            <p className="text-sm md:text-base text-[#000000] max-w-[60%] text-center font-normal leading-none">
               Aqui hacemos los cambios de divisas que otros no
             </p>
           </div>
@@ -294,14 +304,12 @@ const Home = () => {
           <div className="w-1/2 flex justify-center items-center ">
             <img src={HomeCard} alt="" className="w-full h-full " />
           </div>
-          <div className="w-1/2 min-h-[262px]  flex flex-col justify-center gap-y-[20px] px-2">
+          <div className="w-1/2 min-h-[262px]  flex flex-col justify-center mt-16 lg:mt-0 gap-y-[20px] px-2">
             <div className="relative w-full ">
-              <h2 className="text-[58px] text-[#000000] font-bold z-10 relative">
+              <span className="text-[48px] lg:text-[58px] text-[#000000] font-bold z-10 relative ">
                 Vank Card
-              </h2>
-              <div className="absolute w-[283px] bottom-2 ">
-                <IndicadorTwo className="w-full h-full " />
-              </div>
+                <IndicadorTwo className="absolute md:-bottom-[2px] -bottom-1 w-full h-auto" />
+              </span>
             </div>
             <p className="max-w-[460px] text-lg text-[#4C4C4C] leading-6">
               Descubre nuevas maneras de ahorrar y pagar con tu tarjeta Vank,
@@ -313,44 +321,44 @@ const Home = () => {
             </button>
           </div>
         </div>
-        <div className="min-w-[999px] h-full mx-auto flex justify-center items-center -bottom-48 relative">
-          <div className="w-[35%] h-[100%]  absolute left-[4%]">
+        <div className="w-[799px] lg:min-w-[999px] h-full mx-auto flex justify-center items-center -bottom-48 relative">
+          <div className="w-[35%]   absolute left-[4%]">
             <img
               src={PremiumCard}
               className="object-contain z-20 hover:scale-[1.18] hover:rotate-[10deg] hover:relative hover:transition-all hover:duration-500 duration-500 cursor-pointer "
               alt=""
             />
-            <p className="absolute bottom-[9%] left-[23%] text-[16px] font-bold">
+            <p className="absolute -bottom-[5%] left-[23%] text-[16px] font-bold">
               Premium Card
             </p>
           </div>
-          <div className="w-[35%] h-[100%] absolute left-[24.3%] ">
+          <div className="w-[35%]  absolute left-[24.3%] ">
             <img
               src={EliteCard}
               className="object-contain z-20 hover:scale-[1.18] hover:rotate-[10deg] hover:relative hover:transition-all hover:duration-500 duration-500 cursor-pointer "
               alt=""
             />
-            <p className="absolute bottom-[9%] left-[23%] text-[16px] font-bold">
+            <p className="absolute -bottom-[5%] left-[23%] text-[16px] font-bold">
               Elite Card
             </p>
           </div>
-          <div className="w-[35%] h-[100%] absolute left-[44.3%] ">
+          <div className="w-[35%] absolute left-[44.3%] ">
             <img
               src={SignatureBlack}
               className="object-contain z-50 hover:scale-[1.18] hover:rotate-[10deg] hover:relative hover:transition-all hover:duration-500 duration-500 cursor-pointer "
               alt=""
             />
-            <p className="absolute bottom-[9%] left-[23%] text-[16px] font-bold">
+            <p className="absolute -bottom-[5%]  left-[23%] text-[16px] font-bold">
               Signature Black
             </p>
           </div>
-          <div className="w-[35%] h-[100%] absolute left-[64.3%] z-10">
+          <div className="w-[35%]  absolute left-[64.3%] z-10">
             <img
               src={standardCard}
               className="object-contain hover:scale-[1.18] hover:rotate-[10deg] hover:relative hover:transition-all hover:duration-500 duration-500 cursor-pointer "
               alt=""
             />
-            <p className="absolute bottom-[9%] left-[23%] text-[16px] font-bold">
+            <p className="absolute -bottom-[5%]  left-[23%] text-[16px] font-bold">
               Tarjeta Vank
             </p>
           </div>
