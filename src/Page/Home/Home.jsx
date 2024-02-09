@@ -126,7 +126,7 @@ const Home = () => {
       </div>
 
       <div
-        className="w-[95%] md:w-full lg:max-w-[996px] p-12  lg:pt-20 pb-0 lg:pb-16 mx-auto flex  justify-center bg-transparent relative "
+        className="w-[95%] hidden md:w-full lg:max-w-[996px] p-12  lg:pt-20 pb-0 lg:pb-16 mx-auto sm:flex  justify-center bg-transparent relative "
         name="section2"
       >
         <div className="md:ml-12 lg:ml-0 lg:w-[211px] lg:h-[260px] md:w-[111px]  md:h-[160px]  w-[90px]  h-[110px] flex flex-col  justify-center items-center absolute left-0 ">
@@ -147,6 +147,26 @@ const Home = () => {
         <div className="md:mr-12 lg:mr-0 lg:w-[211px] lg:h-[260px] md:w-[111px]  md:h-[160px] w-[90px]  h-[110px] absolute right-0 flex justify-center items-center ">
           <Arrow className="absolute -left-[30px] sm:-left-[149px] md:-left-[160px] lg:-left-[99px] md:top-2 lg:top-14 top-0 w-[40px] sm:w-[200px] h-[20px] md:h-[30px] lg:w-[106px] rotate-[18deg] md:rotate-[20deg] z-10" />
           <Money className="z-10" />
+        </div>
+      </div>
+
+      <div
+        className="w-[95%] md:w-full lg:max-w-[996px]   lg:pt-20 pb-0 pt-10 lg:pb-16 mx-auto flex gap-4 justify-center items-center sm:hidden bg-transparent relative"
+        name="section2"
+      >
+        <div className="flex flex-col justify-center items-center w-full h-full ">
+          <VankLogo className="lg:w-[387.83px] lg:h-[132.73px] sm:w-full sm:h-[59px] mb-3 sm:mb-6" />
+          <p className="text-[13px] sm:text-[28px] text-[#000000] mb-1 sm:mb-1">
+            Recibiendo tus <span className="font-bold">USDT</span> para
+          </p>
+          <p className="text-[13px] sm:text-[28px] text-[#000000]">
+            hacerlas llegar en <span className="font-bold">USD</span>
+          </p>
+        </div>
+        <div className="w-full h-full flex justify-center items-center gap-2">
+          <Tether className="z-10 w-full h-full" />
+          <Arrow className="" />
+          <Money className="z-10 w-full h-full" />
         </div>
       </div>
 
@@ -178,14 +198,18 @@ const Home = () => {
       >
         <div className="w-1/2 h-full flex flex-col justify-center items-center ">
           <div className="relative  leading-none">
-            <p className="text-[25px] sm:text-[30px] md:text-[35px] 2xl:text-[40px] text-left mb-1 sm:mb-2 md:mb-4 2xl:mb-7">Aquí todo es</p>
+            <p className="text-[25px] sm:text-[30px] md:text-[35px] 2xl:text-[40px] text-left mb-1 sm:mb-2 md:mb-4 2xl:mb-7">
+              Aquí todo es
+            </p>
             <p className="text-[23px] sm:text-[35px] md:text-[43px] 2xl:text-[55px] font-bold relative z-10 mb-1 sm:mb-2 md:mb-4 2xl:mb-7">
               tan facil y rápido
             </p>
             <div className="absolute 2xl:w-[221px] md:w-[160px] sm:w-[135px] w-[90px] bottom-[35%] sm:bottom-[26%] md:bottom-[26%] 2xl:bottom-[27%] ">
               <IndicadorTwo className="w-full h-full" />
             </div>
-            <p className="text-[23px] sm:text-[35px] md:text-[43px] 2xl:text-[55px] font-bold">como textear</p>
+            <p className="text-[23px] sm:text-[35px] md:text-[43px] 2xl:text-[55px] font-bold">
+              como textear
+            </p>
           </div>
         </div>
         <div className="w-1/2 h-full flex justify-center items-center gap-3">
