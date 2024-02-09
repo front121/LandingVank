@@ -74,13 +74,14 @@ const Home = () => {
         name="section0"
       >
         <video
-          src={Vank_Short}
           autoPlay
           loop
           muted
           type="video/mp4"
           className="w-full h-full object-cover"
-        />
+        >
+          <source src={Vank_Short} type="video/mp4" />
+        </video>
       </div>
 
       <div
@@ -303,7 +304,11 @@ const Home = () => {
       >
         <div className="max-w-[999px] mx-auto flex justify-center md:gap-[20px] -translate-y-[48%] ">
           <div className="w-1/2 h-full flex justify-center items-center ">
-            <img src={HomeCard} alt="" className="w-full h-full object-contain" />
+            <img
+              src={HomeCard}
+              alt=""
+              className="w-full h-full object-contain"
+            />
           </div>
           <div className="w-1/2 h-full md:min-h-[262px] flex flex-col justify-center lg:mt-20 gap-y-[20px]  px-2  overflow-hidden">
             <div className="relative w-full ">
@@ -370,7 +375,10 @@ const Home = () => {
         className=" w-[90%] lg:max-w-[999px] pt-28 sm:pt-32 pb-24 sm:pb-36 md:pb-44 lg:pb-32 mx-auto flex justify-center items-center gap-10"
         name="section7"
       >
-        <img src={Coffe} className="hidden md:flex md:w-[40%] md:h-[40%] lg:w-[370px] lg:h-[370px] object-contain" />
+        <img
+          src={Coffe}
+          className="hidden md:flex md:w-[40%] md:h-[40%] lg:w-[370px] lg:h-[370px] object-contain"
+        />
         <div className="w-full lg:w-[691px] h-full bg-[#FFED00] p-[20px] rounded-[24px]">
           <div className="w-full  grid grid-cols-2 gap-x-5 gap-y-3">
             <div className="mb:mb-4">
@@ -432,7 +440,11 @@ const Home = () => {
       </div>
 
       <footer className="w-full h-[205px] md:h-[275px] bg-[#000000] relative flex justify-center items-center">
-        <img src={Cintas} alt="" className="absolute -top-10 sm:-top-16 md:-top-16 lg:-top-32" />
+        <img
+          src={Cintas}
+          alt=""
+          className="absolute -top-10 sm:-top-16 md:-top-16 lg:-top-32"
+        />
         <div className="w-[590px] h-[92.87px]">
           <img
             src={LogoAnimation}
