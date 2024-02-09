@@ -297,21 +297,21 @@ const Home = () => {
       </div>
 
       <div
-        className="relative w-full h-[500px] pt-32 bg-[#EDEDED] flex justify-center items-center pb-32"
+        className="w-full  sm:h-[350px] md:h-[500px]  pt-32 bg-[#EDEDED] flex flex-col  lg:mb-28 mt-12"
         name="section6"
       >
-        <div className="max-w-[999px] mx-auto flex justify-center gap-[20px] absolute -top-12">
-          <div className="w-1/2 flex justify-center items-center ">
-            <img src={HomeCard} alt="" className="w-full h-full " />
+        <div className="max-w-[999px] mx-auto flex justify-center gap-[20px] -translate-y-[48%] ">
+          <div className="w-1/2 h-full flex justify-center items-center ">
+            <img src={HomeCard} alt="" className="w-full h-full object-contain" />
           </div>
-          <div className="w-1/2 min-h-[262px]  flex flex-col justify-center mt-16 lg:mt-0 gap-y-[20px] px-2">
+          <div className="w-1/2 h-full md:min-h-[262px] flex flex-col justify-center lg:mt-20 gap-y-[20px]  px-2">
             <div className="relative w-full ">
               <span className="text-[48px] lg:text-[58px] text-[#000000] font-bold z-10 relative ">
                 Vank Card
                 <IndicadorTwo className="absolute md:-bottom-[2px] -bottom-1 w-full h-auto" />
               </span>
             </div>
-            <p className="max-w-[460px] text-lg text-[#4C4C4C] leading-6">
+            <p className="max-w-[460px] sm:text-sm md:text-lg text-[#4C4C4C] leading-6">
               Descubre nuevas maneras de ahorrar y pagar con tu tarjeta Vank,
               controla tu seguridad, accede a pagos rápidos con Apple Pay o
               Google Pay y paga en divisas con extraordinarios tipos de cambio.
@@ -321,14 +321,14 @@ const Home = () => {
             </button>
           </div>
         </div>
-        <div className="w-[799px] lg:min-w-[999px] h-full mx-auto flex justify-center items-center -bottom-48 relative">
+        <div className="w-[90%] lg:w-[799px] lg:min-w-[999px] mx-auto flex justify-center items-center relative">
           <div className="w-[35%]   absolute left-[4%]">
             <img
               src={PremiumCard}
-              className="object-contain z-20 hover:scale-[1.18] hover:rotate-[10deg] hover:relative hover:transition-all hover:duration-500 duration-500 cursor-pointer "
+              className="object-cover z-20 hover:scale-[1.18] hover:rotate-[10deg] hover:relative hover:transition-all hover:duration-500 duration-500 cursor-pointer "
               alt=""
             />
-            <p className="absolute -bottom-[5%] left-[23%] text-[16px] font-bold">
+            <p className="absolute -bottom-[10%] md:-bottom-[5%] left-[23%] text-xs lg:text-base font-bold">
               Premium Card
             </p>
           </div>
@@ -338,7 +338,7 @@ const Home = () => {
               className="object-contain z-20 hover:scale-[1.18] hover:rotate-[10deg] hover:relative hover:transition-all hover:duration-500 duration-500 cursor-pointer "
               alt=""
             />
-            <p className="absolute -bottom-[5%] left-[23%] text-[16px] font-bold">
+            <p className="absolute -bottom-[10%] md:-bottom-[5%] left-[23%] text-xs lg:text-base font-bold">
               Elite Card
             </p>
           </div>
@@ -348,7 +348,7 @@ const Home = () => {
               className="object-contain z-50 hover:scale-[1.18] hover:rotate-[10deg] hover:relative hover:transition-all hover:duration-500 duration-500 cursor-pointer "
               alt=""
             />
-            <p className="absolute -bottom-[5%]  left-[23%] text-[16px] font-bold">
+            <p className="absolute -bottom-[10%] md:-bottom-[5%]  left-[23%] text-xs lg:text-base font-bold">
               Signature Black
             </p>
           </div>
@@ -358,7 +358,7 @@ const Home = () => {
               className="object-contain hover:scale-[1.18] hover:rotate-[10deg] hover:relative hover:transition-all hover:duration-500 duration-500 cursor-pointer "
               alt=""
             />
-            <p className="absolute -bottom-[5%]  left-[23%] text-[16px] font-bold">
+            <p className="absolute -bottom-[10%] md:-bottom-[5%]  left-[23%] text-xs lg:text-base font-bold">
               Tarjeta Vank
             </p>
           </div>
@@ -366,14 +366,14 @@ const Home = () => {
       </div>
 
       <div
-        className="max-w-[999px] pt-32 pb-32 mx-auto flex justify-center items-center gap-5 "
+        className=" w-[90%] lg:max-w-[999px] pt-32 pb-36 md:pb-44 lg:pb-32 mx-auto flex justify-center items-center gap-10"
         name="section7"
       >
-        <img src={Coffe} alt="" />
-        <div className="w-[691px] h-full bg-[#FFED00] p-[20px] rounded-[24px]">
+        <img src={Coffe} className="sm:hidden md:flex md:w-[40%] md:h-[40%] lg:w-[370px] lg:h-[370px] object-contain" />
+        <div className="w-full lg:w-[691px] h-full bg-[#FFED00] p-[20px] rounded-[24px]">
           <div className="w-full  grid grid-cols-2 gap-x-5 gap-y-3">
-            <div className="mb-4">
-              <label className="ml-4" htmlFor="">
+            <div className="mb:mb-4">
+              <label className="ml-4 text-sm lg:text-base" htmlFor="">
                 Nombre Completo
               </label>
               <input
@@ -382,8 +382,8 @@ const Home = () => {
                 className="rounded-[16px] h-[32px] w-full focus:outline-none px-3"
               />
             </div>
-            <div className="mb-4">
-              <label className="ml-4" htmlFor="">
+            <div className="mb:mb-4">
+              <label className="ml-4 text-sm lg:text-base" htmlFor="">
                 Correo Electronico*
               </label>
               <input
@@ -392,8 +392,8 @@ const Home = () => {
                 className="rounded-[16px] h-[32px] w-full focus:outline-none px-3"
               />
             </div>
-            <div className="mb-4">
-              <label className="ml-4" htmlFor="">
+            <div className="mb:mb-4">
+              <label className="ml-4 text-sm lg:text-base" htmlFor="">
                 Número de contacto *
               </label>
               <input
@@ -402,8 +402,8 @@ const Home = () => {
                 className="rounded-[16px] h-[32px] w-full focus:outline-none px-3"
               />
             </div>
-            <div className="mb-4">
-              <label className="ml-4" htmlFor="">
+            <div className="mb:mb-4">
+              <label className="ml-4 text-sm lg:text-base" htmlFor="">
                 Horario disponible
               </label>
               <input
@@ -414,7 +414,7 @@ const Home = () => {
             </div>
           </div>
           <div className="mb-4">
-            <label className="ml-4" htmlFor="">
+            <label className="ml-4 text-sm lg:text-base" htmlFor="">
               Comentario
             </label>
             <textarea
@@ -424,14 +424,14 @@ const Home = () => {
               className="rounded-[16px] h-[75px] w-full focus:outline-none p-2"
             ></textarea>
           </div>
-          <button className="min-w-[183px] h-[37px] font-bold rounded-[24px] bg-[#000000] text-[#FFFFFF] ">
+          <button className="min-w-[183px] h-[37px] text-sm lg:text-base font-bold rounded-[24px] bg-[#000000] text-[#FFFFFF] ">
             Enviar ahora
           </button>
         </div>
       </div>
 
-      <footer className="w-full h-[275px] bg-[#000000] relative flex justify-center items-center">
-        <img src={Cintas} alt="" className="absolute -top-32" />
+      <footer className="w-full h-[205px] md:h-[275px] bg-[#000000] relative flex justify-center items-center">
+        <img src={Cintas} alt="" className="absolute -top-16 md:-top-16 lg:-top-32" />
         <div className="w-[590px] h-[92.87px]">
           <img
             src={LogoAnimation}
@@ -440,10 +440,10 @@ const Home = () => {
           />
         </div>
         <div className="flex justify-center items-center gap-5 absolute bottom-6 left-1/2 -translate-x-1/2 ">
-          <p className="text-base font-normal text-[#FFED00]">
+          <p className="text-sm md:text-base font-normal text-[#FFED00]">
             contacto@thisisvank.com
           </p>
-          <p className="text-base font-normal text-[#FFED00]">
+          <p className="text-xs md:text-base font-normal text-[#FFED00]">
             Copyright © 2024
           </p>
         </div>
