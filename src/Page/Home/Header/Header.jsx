@@ -5,6 +5,12 @@ import Indicador from "../../../assets/Indicador";
 import VankLogo from "../../../assets/VankLogo";
 
 import { Link } from "react-scroll";
+import Close from "../../../assets/Close";
+import Person from "../../../assets/Person";
+import Suitcase from "../../../assets/Suitcase";
+import Card from "../../../assets/Card";
+import Company from "../../../assets/Company";
+import Contact from "../../../assets/Contact";
 
 const Header = ({ handleSetActive, activeSection }) => {
   const [isMenu, setIsMenu] = useState(false);
@@ -28,7 +34,9 @@ const Header = ({ handleSetActive, activeSection }) => {
   return (
     <div
       className={`${
-        activeSection === "section0" ? "bg-white bg-opacity-85" : " bg-white shadow-2xl"
+        activeSection === "section0"
+          ? "bg-white bg-opacity-85"
+          : " bg-white shadow-2xl"
       }  text-black fixed top-0 left-0 right-0 z-50 transition-all duration-500`}
     >
       <div className="px-7 min-h-[56px] flex justify-between items-center  xl:pl-20 2xl:pl-32 2xl:px-12">
@@ -168,33 +176,53 @@ const Header = ({ handleSetActive, activeSection }) => {
           <Menu />
         </div>
       </div>
-      <div>
-        <ul
-          className={`md:hidden text-lg block space-y-4 px-4 py-6 mt-14 bg-white ${
-            isMenu
-              ? "fixed top-0 left-0 w-full transition-all ease-out duration-150"
-              : "hidden"
+      <div
+        className={`inset-0 z-50 bg-gray-800 bg-opacity-50  fixed top-0 left-0 w-full  ${
+          isMenu ? "visible" : "invisible"
+        }`}
+      >
+        <div
+          className={`absolute w-9/12 sm:w-1/2 right-0 h-full p-2   bg-white transition-all duration-700 ${
+            isMenu ? "translate-x-0" : "translate-x-full"
           }`}
         >
-          <li className="font-semibold my-7 md:my-0 md:ml-8 text-sm lg:text-base ">
-            <a href="#">Personas</a>
-          </li>
-          <li className="font-semibold my-7 md:my-0 md:ml-8 text-sm lg:text-base">
-            <a href="#">Negocios</a>
-          </li>
-          <li className="font-semibold my-7 md:my-0 md:ml-8 text-sm lg:text-base">
-            <a href="#">VankCard</a>
-          </li>
-          <li className="font-semibold my-7 md:my-0 md:ml-8 text-sm lg:text-base">
-            <a href="#">VankVersity</a>
-          </li>
-          <li className="font-semibold my-7 md:my-0 md:ml-8 text-sm lg:text-base">
-            <a href="#">Compañia</a>
-          </li>
-          <li className="font-semibold my-7 md:my-0 md:ml-8 text-sm lg:text-base">
-            <a href="#">Contacto</a>
-          </li>
-        </ul>
+          <div
+            className="absolute -left-4 cursor-pointer w-[40px] h-[40px] p-1 flex justify-center items-center bg-[#eee] rounded-[40px]"
+            onClick={toogleMenu}
+          >
+            <Close className="w-full h-full" />
+          </div>
+          <ul
+            className={`text-lg block space-y-4 px-4 py-6 transition-colors duration-300 mt-7 ${
+              isMenu ? "" : ""
+            }`}
+          >
+            <li className="font-semibold  flex items-center gap-x-2 h-11  w-full py-3 px-4 md:my-0 md:ml-8 text-sm lg:text-base rounded-[7px]  bg-[#EDEDED] hover:border-b-2 border-[#FFED00] cursor-pointer group">
+              <Person className="h-6 " />
+              <a href="#">Personas</a>
+            </li>
+            <li className="font-semibold  flex items-center gap-x-2 h-11  w-full  py-3 px-4 md:my-0 md:ml-8 text-sm lg:text-base rounded-[7px] bg-[#EDEDED] hover:border-b-2 border-[#FFED00] cursor-pointer">
+              <Suitcase className="h-6 " />
+              <a href="#">Negocios</a>
+            </li>
+            <li className="font-semibold  flex items-center gap-x-2 h-11  w-full py-3 px-4 md:my-0 md:ml-8 text-sm lg:text-base rounded-[7px] bg-[#EDEDED] hover:border-b-2 border-[#FFED00] cursor-pointer">
+              <Card className="h-6" />
+              <a href="#">VankCard</a>
+            </li>
+            <li className="font-semibold  flex items-center gap-x-2 h-11  w-full py-3 px-4 md:my-0 md:ml-8 text-sm lg:text-base rounded-[7px] bg-[#EDEDED] hover:border-b-2 border-[#FFED00] cursor-pointer">
+              <Card className="h-6" />
+              <a href="#">VankVersity</a>
+            </li>
+            <li className="font-semibold  flex items-center gap-x-2 h-11  w-full py-3 px-4 md:my-0 md:ml-8 text-sm lg:text-base rounded-[7px] bg-[#EDEDED] hover:border-b-2 border-[#FFED00] cursor-pointer">
+              <Company className="h-6" />
+              <a href="#">Compañia</a>
+            </li>
+            <li className="font-semibold  flex items-center gap-x-2 h-11  w-full py-3 px-4 md:my-0 md:ml-8 text-sm lg:text-base rounded-[7px] bg-[#EDEDED] hover:border-b-2 border-[#FFED00] cursor-pointer">
+              <Contact className="h-6" />
+              <a href="#">Contacto</a>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   );

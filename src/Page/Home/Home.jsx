@@ -67,7 +67,7 @@ const Home = () => {
   };
 
   return (
-    <div>
+    <div className="w-full h-full">
       <Header handleSetActive={handleSetActive} activeSection={activeSection} />
       <div
         className="Banner w-full min-h-full  mx-auto text-center flex justify-center relative mt-14 2xl:mt-0"
@@ -77,11 +77,9 @@ const Home = () => {
           autoPlay
           loop
           muted
-          type="video/mp4"
+          src={Vank_Short}
           className="w-full h-full object-cover"
-        >
-          <source src={Vank_Short} type="video/mp4" />
-        </video>
+        />
       </div>
 
       <div
@@ -217,7 +215,7 @@ const Home = () => {
           </div>
         </div>
         <div className="w-full sm:w-1/2 h-full flex justify-center items-center gap-3">
-          <div className="w-[190px] h-[190px] sm:w-[230px] sm:h-[200px] md:w-[230px] md:h-[231.24px] rounded-[8px] bg-[#EDEDED] flex flex-col justify-center items-center gap-y-2">
+          <div className="w-[150px] h-[190px] sm:w-[230px] sm:h-[200px] md:w-[230px] md:h-[231.24px] rounded-[8px] bg-[#EDEDED] flex flex-col justify-center items-center gap-y-2">
             <p className="w-[139px] p-1 text-base md:text-lg text-center leading-none">
               Regístrate y crea tu cuenta
             </p>
@@ -226,7 +224,7 @@ const Home = () => {
               <HandFound className="absolute" />
             </div>
           </div>
-          <div className="w-[190px] h-[190px]  sm:w-[230px] sm:h-[200px] md:w-[230px] md:h-[231.24px] rounded-[8px] bg-[#EDEDED] flex flex-col justify-center items-center gap-y-2">
+          <div className="w-[150px] h-[190px]  sm:w-[230px] sm:h-[200px] md:w-[230px] md:h-[231.24px] rounded-[8px] bg-[#EDEDED] flex flex-col justify-center items-center gap-y-2">
             <p className="w-[139px] p-1 text-base md:text-lg text-center leading-none">
               Recarga y disfruta
             </p>
@@ -310,9 +308,9 @@ const Home = () => {
               className="w-full h-full object-contain"
             />
           </div>
-          <div className="w-1/2 h-full md:min-h-[262px] flex flex-col justify-center lg:mt-20 gap-y-[20px]  px-2  overflow-hidden">
+          <div className="w-1/2 h-full md:min-h-[262px] flex flex-col justify-center lg:mt-20 gap-y-[10px] md:gap-y-[20px]  px-2  overflow-hidden">
             <div className="relative w-full ">
-              <span className="text-xl md:text-[48px] lg:text-[58px] text-[#000000] font-bold z-10 relative ">
+              <span className="text-2xl md:text-[48px] lg:text-[58px] text-[#000000] font-bold z-10 relative ">
                 Vank Card
                 <IndicadorTwo className="absolute md:-bottom-[2px] -bottom-1 w-full h-auto" />
               </span>
@@ -322,7 +320,7 @@ const Home = () => {
               controla tu seguridad, accede a pagos rápidos con Apple Pay o
               Google Pay y paga en divisas con extraordinarios tipos de cambio.
             </p>
-            <button className="w-[120px] h-[32px] bg-[#000000] text-[#FFFFFF] hover:text-[#FFED00] rounded-[24px] text-base font-bold">
+            <button className="w-[95px] h-[28px] md:w-[120px] md:h-[32px] bg-[#000000] text-[#FFFFFF] hover:text-[#FFED00] rounded-[24px] text-xs md:text-base font-bold">
               Suscríbete
             </button>
           </div>
@@ -334,7 +332,7 @@ const Home = () => {
               className="object-cover z-20 hover:scale-[1.18] hover:rotate-[10deg] hover:relative hover:transition-all hover:duration-500 duration-500 cursor-pointer "
               alt=""
             />
-            <p className="absolute -bottom-[10%] md:-bottom-[5%] left-[23%] text-xs lg:text-base font-bold">
+            <p className="absolute -bottom-[35%] sm:-bottom-[10%] md:-bottom-[5%] left-[23%] text-xs w-min sm:w-max lg:text-base font-bold">
               Premium Card
             </p>
           </div>
@@ -344,17 +342,17 @@ const Home = () => {
               className="object-contain z-20 hover:scale-[1.18] hover:rotate-[10deg] hover:relative hover:transition-all hover:duration-500 duration-500 cursor-pointer "
               alt=""
             />
-            <p className="absolute -bottom-[10%] md:-bottom-[5%] left-[23%] text-xs lg:text-base font-bold">
+            <p className="absolute -bottom-[35%] sm:-bottom-[10%] md:-bottom-[5%] left-[23%] text-xs w-min sm:w-max lg:text-base font-bold">
               Elite Card
             </p>
           </div>
           <div className="w-[35%] absolute left-[44.3%] ">
             <img
               src={SignatureBlack}
-              className="object-contain z-50 hover:scale-[1.18] hover:rotate-[10deg] hover:relative hover:transition-all hover:duration-500 duration-500 cursor-pointer "
+              className="object-contain z-20 hover:scale-[1.18] hover:rotate-[10deg] hover:relative hover:transition-all hover:duration-500 duration-500 cursor-pointer "
               alt=""
             />
-            <p className="absolute -bottom-[10%] md:-bottom-[5%]  left-[23%] text-xs lg:text-base font-bold">
+            <p className="absolute -bottom-[35%] sm:-bottom-[10%] md:-bottom-[5%] left-[23%] text-xs w-min sm:w-max lg:text-base font-bold">
               Signature Black
             </p>
           </div>
@@ -364,7 +362,7 @@ const Home = () => {
               className="object-contain hover:scale-[1.18] hover:rotate-[10deg] hover:relative hover:transition-all hover:duration-500 duration-500 cursor-pointer "
               alt=""
             />
-            <p className="absolute -bottom-[10%] md:-bottom-[5%]  left-[23%] text-xs lg:text-base font-bold">
+            <p className="absolute -bottom-[35%] sm:-bottom-[10%] md:-bottom-[5%] left-[23%] text-xs w-min sm:w-max lg:text-base font-bold">
               Tarjeta Vank
             </p>
           </div>
@@ -377,10 +375,10 @@ const Home = () => {
       >
         <img
           src={Coffe}
-          className="hidden md:flex md:w-[40%] md:h-[40%] lg:w-[370px] lg:h-[370px] object-contain"
+          className="hidden md:flex md:w-[35%] md:h-[35%] lg:w-[370px] lg:h-[370px] object-contain"
         />
-        <div className="w-full lg:w-[691px] h-full bg-[#FFED00] p-[20px] rounded-[24px]">
-          <div className="w-full  grid grid-cols-2 gap-x-5 gap-y-3">
+        <div className="w-full lg:w-[691px] h-full md:inline-block flex flex-col  bg-[#FFED00] p-[20px] rounded-[24px]">
+          <div className="w-full  grid sm:grid-cols-2 grid-cols-1 gap-x-5 gap-y-3">
             <div className="mb:mb-4">
               <label className="ml-4 text-sm lg:text-base" htmlFor="">
                 Nombre Completo
