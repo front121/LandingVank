@@ -186,6 +186,7 @@ const Header = ({ handleSetActive, activeSection }) => {
             isMenu ? "translate-x-0" : "translate-x-full"
           }`}
         >
+       
           <div
             className="absolute -left-4 cursor-pointer w-[40px] h-[40px] p-1 flex justify-center items-center bg-[#eee] rounded-[40px]"
             onClick={toogleMenu}
@@ -197,27 +198,27 @@ const Header = ({ handleSetActive, activeSection }) => {
               isMenu ? "" : ""
             }`}
           >
-            <li className="font-semibold  flex items-center gap-x-2 h-11  w-full py-3 px-4 md:my-0 md:ml-8 text-sm lg:text-base rounded-[7px]  bg-[#EDEDED] hover:border-b-2 border-[#FFED00] cursor-pointer group">
+            <li className="font-semibold  flex items-center gap-x-2 h-11  w-full py-3 px-4 md:my-0  text-sm lg:text-base rounded-[7px]  bg-[#EDEDED] hover:border-b-2 border-[#FFED00] cursor-pointer group">
               <Person className="h-6 " />
               <a href="#">Personas</a>
             </li>
-            <li className="font-semibold  flex items-center gap-x-2 h-11  w-full  py-3 px-4 md:my-0 md:ml-8 text-sm lg:text-base rounded-[7px] bg-[#EDEDED] hover:border-b-2 border-[#FFED00] cursor-pointer">
+            <li className="font-semibold  flex items-center gap-x-2 h-11  w-full  py-3 px-4 md:my-0  text-sm lg:text-base rounded-[7px] bg-[#EDEDED] hover:border-b-2 border-[#FFED00] cursor-pointer">
               <Suitcase className="h-6 " />
               <a href="#">Negocios</a>
             </li>
-            <li className="font-semibold  flex items-center gap-x-2 h-11  w-full py-3 px-4 md:my-0 md:ml-8 text-sm lg:text-base rounded-[7px] bg-[#EDEDED] hover:border-b-2 border-[#FFED00] cursor-pointer">
+            <li className="font-semibold  flex items-center gap-x-2 h-11  w-full py-3 px-4 md:my-0 text-sm lg:text-base rounded-[7px] bg-[#EDEDED] hover:border-b-2 border-[#FFED00] cursor-pointer">
               <Card className="h-6" />
               <a href="#">VankCard</a>
             </li>
-            <li className="font-semibold  flex items-center gap-x-2 h-11  w-full py-3 px-4 md:my-0 md:ml-8 text-sm lg:text-base rounded-[7px] bg-[#EDEDED] hover:border-b-2 border-[#FFED00] cursor-pointer">
+            <li className="font-semibold  flex items-center gap-x-2 h-11  w-full py-3 px-4 md:my-0  text-sm lg:text-base rounded-[7px] bg-[#EDEDED] hover:border-b-2 border-[#FFED00] cursor-pointer">
               <Card className="h-6" />
               <a href="#">VankVersity</a>
             </li>
-            <li className="font-semibold  flex items-center gap-x-2 h-11  w-full py-3 px-4 md:my-0 md:ml-8 text-sm lg:text-base rounded-[7px] bg-[#EDEDED] hover:border-b-2 border-[#FFED00] cursor-pointer">
+            <li className="font-semibold  flex items-center gap-x-2 h-11  w-full py-3 px-4 md:my-0 text-sm lg:text-base rounded-[7px] bg-[#EDEDED] hover:border-b-2 border-[#FFED00] cursor-pointer">
               <Company className="h-6" />
               <a href="#">Compañia</a>
             </li>
-            <li className="font-semibold  flex items-center gap-x-2 h-11  w-full py-3 px-4 md:my-0 md:ml-8 text-sm lg:text-base rounded-[7px] bg-[#EDEDED] hover:border-b-2 border-[#FFED00] cursor-pointer">
+            <li className="font-semibold  flex items-center gap-x-2 h-11  w-full py-3 px-4 md:my-0 text-sm lg:text-base rounded-[7px] bg-[#EDEDED] hover:border-b-2 border-[#FFED00] cursor-pointer">
               <Contact className="h-6" />
               <a href="#">Contacto</a>
             </li>

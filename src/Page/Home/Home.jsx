@@ -70,7 +70,7 @@ const Home = () => {
     <div className="w-full h-full">
       <Header handleSetActive={handleSetActive} activeSection={activeSection} />
       <div
-        className="Banner w-full min-h-full  mx-auto text-center flex justify-center relative mt-14 2xl:mt-0"
+        className="Banner w-full min-h-full  mx-auto text-center flex justify-center relative mt-32 2xl:mt-0 object-contain"
         name="section0"
       >
         <video
@@ -328,15 +328,25 @@ const Home = () => {
         <div className="w-full sm:w-[90%] lg:w-[799px] lg:min-w-[999px] mx-auto flex justify-center items-center relative">
           <div className="w-[35%]   absolute left-[4%]">
             <img
-              src={PremiumCard}
+              src={standardCard}
               className="object-cover z-20 hover:scale-[1.18] hover:rotate-[10deg] hover:relative hover:transition-all hover:duration-500 duration-500 cursor-pointer "
+              alt=""
+            />
+            <p className="absolute -bottom-[35%] sm:-bottom-[10%] md:-bottom-[5%] left-[23%] text-xs w-min sm:w-max lg:text-base font-bold">
+              Tarjeta Vank
+            </p>
+          </div>
+          <div className="w-[35%]  absolute left-[24.3%] ">
+            <img
+              src={PremiumCard}
+              className="object-contain z-20 hover:scale-[1.18] hover:rotate-[10deg] hover:relative hover:transition-all hover:duration-500 duration-500 cursor-pointer "
               alt=""
             />
             <p className="absolute -bottom-[35%] sm:-bottom-[10%] md:-bottom-[5%] left-[23%] text-xs w-min sm:w-max lg:text-base font-bold">
               Premium Card
             </p>
           </div>
-          <div className="w-[35%]  absolute left-[24.3%] ">
+          <div className="w-[35%] absolute left-[44.3%] ">
             <img
               src={EliteCard}
               className="object-contain z-20 hover:scale-[1.18] hover:rotate-[10deg] hover:relative hover:transition-all hover:duration-500 duration-500 cursor-pointer "
@@ -346,24 +356,14 @@ const Home = () => {
               Elite Card
             </p>
           </div>
-          <div className="w-[35%] absolute left-[44.3%] ">
-            <img
-              src={SignatureBlack}
-              className="object-contain z-20 hover:scale-[1.18] hover:rotate-[10deg] hover:relative hover:transition-all hover:duration-500 duration-500 cursor-pointer "
-              alt=""
-            />
-            <p className="absolute -bottom-[35%] sm:-bottom-[10%] md:-bottom-[5%] left-[23%] text-xs w-min sm:w-max lg:text-base font-bold">
-              Signature Black
-            </p>
-          </div>
           <div className="w-[35%]  absolute left-[64.3%] z-10">
             <img
-              src={standardCard}
+              src={SignatureBlack}
               className="object-contain hover:scale-[1.18] hover:rotate-[10deg] hover:relative hover:transition-all hover:duration-500 duration-500 cursor-pointer "
               alt=""
             />
             <p className="absolute -bottom-[35%] sm:-bottom-[10%] md:-bottom-[5%] left-[23%] text-xs w-min sm:w-max lg:text-base font-bold">
-              Tarjeta Vank
+              Signature Black
             </p>
           </div>
         </div>
