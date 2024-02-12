@@ -70,7 +70,7 @@ const Home = () => {
     <div className="w-full h-full">
       <Header handleSetActive={handleSetActive} activeSection={activeSection} />
       <div
-        className="w-full h-screen mt-32 2xl:mt-0 object-contain"
+        className="w-full h-full mt-32 2xl:mt-0 object-contain"
         name="section0"
       >
         <video
