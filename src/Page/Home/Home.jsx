@@ -70,7 +70,7 @@ const Home = () => {
     <div className="w-full h-full">
       <Header handleSetActive={handleSetActive} activeSection={activeSection} />
       <div
-        className="Banner w-full h-screen  mx-auto text-center flex justify-center mt-32 2xl:mt-0 object-contain px-12"
+        className="w-full h-screen mt-32 2xl:mt-0 object-contain px-12"
         name="section0"
       >
         <video
@@ -78,7 +78,7 @@ const Home = () => {
           autoPlay
           loop
           muted
-          className="w-full h-full object-cover -z-10"
+          className="w-[100%] h-[100%] object-cover -z-10"
         />
       </div>
 
