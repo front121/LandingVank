@@ -78,6 +78,7 @@ const Home = () => {
           autoPlay
           loop
           muted
+          controls
           className="w-[100%] h-[100%] object-cover -z-10"
         />
       </div>
