@@ -78,7 +78,7 @@ const Home = () => {
           loop
           muted
           src={Vank_Short}
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover -z-10 fixed"
         />
       </div>
 
