@@ -467,14 +467,15 @@ const Home = () => {
             href="/"
             className="group flex justify-center p-4 rounded-full drop-shadow-xl bg-[#25d366] from-gray-800 text-white font-semibold hover:translate-y-3 hover:rounded-[50%] transition-all duration-500 hover:from-[#331029] hover:to-[#310413]"
           >
-            <Whatsapp className="w-[42px] h-[42px]" />
-            <span className="absolute opacity-0 group-hover:opacity-100 group-hover:text-[#000000] bg-white p-2 group-hover:text-xl group-hover:-translate-y-16 rounded-lg duration-700">
+            <Whatsapp className="w-[30px] h-[30px] md:w-[42px] md:h-[42px]" />
+            <span className="absolute opacity-0 group-hover:opacity-100 group-hover:text-[#000000] bg-white p-1 md:p-2 group-hover:text-base md:group-hover:text-xl group-hover:-translate-y-16 rounded-lg duration-700">
               Whatsapp
             </span>
           </button>
         </section>
       </div>
-      <div className="fixed px-3 py-2 left-7 bottom-7 z-50 flex gap-4 bg-[#000000] rounded-[30px]">
+
+      <div className="fixed px-2 py-2 sm:px-3 sm:py-2 left-7 bottom-7 z-50 flex gap-4 bg-[#000000] rounded-[30px]">
         <img src={Insta} alt="" className="" />
         <img src={Link} alt="" className="" />
       </div>
