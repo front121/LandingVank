@@ -74,10 +74,10 @@ const Home = () => {
         name="section0"
       >
         <video
+          src={Vank_Short}
           autoPlay
           loop
           muted
-          src={Vank_Short}
           className="w-full h-full object-cover -z-10 fixed"
         />
       </div>
