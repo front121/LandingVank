@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   Link as Links,
   Button,
@@ -45,6 +45,8 @@ import LogoAnimation from "../../assets/v-vank-logo-animation.gif";
 import "./Home.css";
 
 const Home = () => {
+  const videoRef = useRef(null);
+
   const [activeSection, setActiveSection] = useState("section0");
 
   // useEffect(() => {
@@ -62,6 +64,11 @@ const Home = () => {
   //   };
   // }, []);
 
+  useEffect(() => {
+    // Reproducir automáticamente el video cuando se monta el componente
+    videoRef.current.play();
+  }, []);
+
   const handleSetActive = (to) => {
     setActiveSection(to);
   };
@@ -75,10 +82,10 @@ const Home = () => {
       >
         <video
           src={Vank_Short}
-          autoPlay
+          // autoPlay
+          ref={videoRef}
           loop
           muted
-          controls
           className="w-[100%] h-[100%] object-cover -z-10"
         />
       </div>
