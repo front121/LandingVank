@@ -39,7 +39,7 @@ import Insta from "../../assets/Insta.svg";
 import Link from "../../assets/Link.svg";
 import animation from "../../assets/v-vank-logo-animation 2.png";
 import Whatsapp from "../../assets/Whatsapp";
-import Vank_Short from "../../assets/Animacion_Vank_Short_WP.mp4";
+import Vank_Short from "../../assets/video-banner-vank.mp4";
 import LogoAnimation from "../../assets/v-vank-logo-animation.gif";
 
 import "./Home.css";
@@ -65,21 +65,21 @@ const Home = () => {
   const handleSetActive = (to) => {
     setActiveSection(to);
   };
-
+  
   return (
     <div className="w-full h-full">
       <Header handleSetActive={handleSetActive} activeSection={activeSection} />
       <div
-        className="w-full h-full mt-14 2xl:mt-0 object-contain"
+        className="w-full h-full lg:h-[91vh] 2xl:h-screen mt-14 2xl:mt-0"
         name="section0"
       >
         <video
-          src={Vank_Short}
           autoPlay
+          src={Vank_Short}
           loop
-          muted
-          playsInline
+          // muted={activeSection !== 'section0' ? true : false}
           className="w-[100%] h-[100%] object-cover -z-10"
+          // controls
         />
       </div>
 
@@ -333,7 +333,7 @@ const Home = () => {
               className="object-contain  z-20 hover:scale-[1.18] hover:rotate-[10deg] hover:relative hover:transition-all hover:duration-300 duration-500 cursor-pointer "
               alt=""
             />
-            <p className="absolute -bottom-[35%] sm:-bottom-[10%] md:-bottom-[15%] left-[10%] text-xs w-min sm:w-max lg:text-base font-bold">
+            <p className="absolute -bottom-[45 %] sm:-bottom-[17%] md:-bottom-[15%] left-[10%] text-xs w-min sm:w-max lg:text-base font-bold">
               Tarjeta Vank
             </p>
           </div>
@@ -343,7 +343,7 @@ const Home = () => {
               className="object-contain z-20  hover:scale-[1.18] hover:rotate-[10deg] hover:relative hover:transition-all hover:duration-300 duration-500 cursor-pointer "
               alt=""
             />
-            <p className="absolute -bottom-[35%] sm:-bottom-[10%] md:-bottom-[15%] left-[10%] text-xs w-min sm:w-max lg:text-base font-bold">
+            <p className="absolute -bottom-[45%] sm:-bottom-[17%] md:-bottom-[15%] left-[10%] text-xs w-min sm:w-max lg:text-base font-bold">
               Premium Card
             </p>
           </div>
@@ -353,7 +353,7 @@ const Home = () => {
               className="object-contain z-20 hover:scale-[1.18] hover:rotate-[10deg] hover:relative hover:transition-all hover:duration-300 duration-500 cursor-pointer "
               alt=""
             />
-            <p className="absolute -bottom-[35%] sm:-bottom-[10%] md:-bottom-[15%] left-[10%] text-xs w-min sm:w-max lg:text-base font-bold">
+            <p className="absolute -bottom-[45%] sm:-bottom-[17%] md:-bottom-[15%] left-[10%] text-xs w-min sm:w-max lg:text-base font-bold">
               Elite Card
             </p>
           </div>
@@ -363,7 +363,7 @@ const Home = () => {
               className="object-contain hover:scale-[1.18] hover:rotate-[10deg] hover:relative hover:transition-all hover:duration-300 duration-500 cursor-pointer "
               alt=""
             />
-            <p className="absolute -bottom-[35%] sm:-bottom-[10%] md:-bottom-[15%] left-[10%] text-xs w-min sm:w-max lg:text-base font-bold">
+            <p className="absolute -bottom-[45%] sm:-bottom-[17%] md:-bottom-[15%] left-[10%] text-xs w-min sm:w-max lg:text-base font-bold">
               Signature Black
             </p>
           </div>
