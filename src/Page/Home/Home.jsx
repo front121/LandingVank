@@ -327,43 +327,43 @@ const Home = () => {
           </div>
         </div>
         <div className="w-full sm:w-[90%] lg:w-[799px] lg:min-w-[999px] mx-auto flex justify-center items-center relative">
-          <div className="w-[35%]   absolute left-[4%]">
+          <div className="absolute w-[28%] left-[4%]">
             <img
               src={standardCard}
-              className="object-cover z-20 hover:scale-[1.18] hover:rotate-[10deg] hover:relative hover:transition-all hover:duration-500 duration-500 cursor-pointer "
+              className="object-contain  z-20 hover:scale-[1.18] hover:rotate-[10deg] hover:relative hover:transition-all hover:duration-300 duration-500 cursor-pointer "
               alt=""
             />
-            <p className="absolute -bottom-[35%] sm:-bottom-[10%] md:-bottom-[5%] left-[23%] text-xs w-min sm:w-max lg:text-base font-bold">
+            <p className="absolute -bottom-[35%] sm:-bottom-[10%] md:-bottom-[15%] left-[10%] text-xs w-min sm:w-max lg:text-base font-bold">
               Tarjeta Vank
             </p>
           </div>
-          <div className="w-[35%]  absolute left-[24.3%] ">
+          <div className="w-[28%]  absolute left-[27%]">
             <img
               src={PremiumCard}
-              className="object-contain z-20 hover:scale-[1.18] hover:rotate-[10deg] hover:relative hover:transition-all hover:duration-500 duration-500 cursor-pointer "
+              className="object-contain z-20  hover:scale-[1.18] hover:rotate-[10deg] hover:relative hover:transition-all hover:duration-300 duration-500 cursor-pointer "
               alt=""
             />
-            <p className="absolute -bottom-[35%] sm:-bottom-[10%] md:-bottom-[5%] left-[23%] text-xs w-min sm:w-max lg:text-base font-bold">
+            <p className="absolute -bottom-[35%] sm:-bottom-[10%] md:-bottom-[15%] left-[10%] text-xs w-min sm:w-max lg:text-base font-bold">
               Premium Card
             </p>
           </div>
-          <div className="w-[35%] absolute left-[44.3%] ">
+          <div className="w-[28%] absolute left-[49.5%] ">
             <img
               src={EliteCard}
-              className="object-contain z-20 hover:scale-[1.18] hover:rotate-[10deg] hover:relative hover:transition-all hover:duration-500 duration-500 cursor-pointer "
+              className="object-contain z-20 hover:scale-[1.18] hover:rotate-[10deg] hover:relative hover:transition-all hover:duration-300 duration-500 cursor-pointer "
               alt=""
             />
-            <p className="absolute -bottom-[35%] sm:-bottom-[10%] md:-bottom-[5%] left-[23%] text-xs w-min sm:w-max lg:text-base font-bold">
+            <p className="absolute -bottom-[35%] sm:-bottom-[10%] md:-bottom-[15%] left-[10%] text-xs w-min sm:w-max lg:text-base font-bold">
               Elite Card
             </p>
           </div>
-          <div className="w-[35%]  absolute left-[64.3%] z-10">
+          <div className="w-[28%]  absolute left-[72.5%] z-10">
             <img
               src={SignatureBlack}
-              className="object-contain hover:scale-[1.18] hover:rotate-[10deg] hover:relative hover:transition-all hover:duration-500 duration-500 cursor-pointer "
+              className="object-contain hover:scale-[1.18] hover:rotate-[10deg] hover:relative hover:transition-all hover:duration-300 duration-500 cursor-pointer "
               alt=""
             />
-            <p className="absolute -bottom-[35%] sm:-bottom-[10%] md:-bottom-[5%] left-[23%] text-xs w-min sm:w-max lg:text-base font-bold">
+            <p className="absolute -bottom-[35%] sm:-bottom-[10%] md:-bottom-[15%] left-[10%] text-xs w-min sm:w-max lg:text-base font-bold">
               Signature Black
             </p>
           </div>
