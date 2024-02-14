@@ -7,6 +7,7 @@ import {
   animateScroll as scroll,
   scrollSpy,
 } from "react-scroll";
+import ReactPlayer from "react-player";
 
 import Header from "./Header/Header";
 import People from "../../assets/People";
@@ -40,12 +41,17 @@ import Link from "../../assets/Link.svg";
 import animation from "../../assets/v-vank-logo-animation 2.png";
 import Whatsapp from "../../assets/Whatsapp";
 import Vank_Short from "../../assets/video-banner-vank.mp4";
+import Vank_Short_Audio from "../../assets/Animacion_Vank_Short_WP.mp3";
 import LogoAnimation from "../../assets/v-vank-logo-animation.gif";
 
 import "./Home.css";
 
 const Home = () => {
   const [activeSection, setActiveSection] = useState("section0");
+  const [playing, setPlaying] = useState(false);
+
+  // const videoRef = useRef(null);
+  // const audioRef = useRef(null);
 
   // useEffect(() => {
   //   Events.scrollEvent.register("begin", function () {
@@ -62,10 +68,26 @@ const Home = () => {
   //   };
   // }, []);
 
+  // useEffect(() => {
+  //   const audioElement = audioRef.current;
+
+  //   const da = document.getElementById("my_audio");
+  //   console.log(da);
+  //   // Reproducir el audio una vez que se monta el componente
+  //   setTimeout(() => {
+  //     document.getElementById("my_audio").play();
+  //   }, 8000);
+
+  //   return () => {
+  //     // Detener la reproducción del audio cuando el componente se desmonta
+  //     audioElement.pause();
+  //   };
+  // }, []);
+
   const handleSetActive = (to) => {
     setActiveSection(to);
   };
-  
+
   return (
     <div className="w-full h-full">
       <Header handleSetActive={handleSetActive} activeSection={activeSection} />
@@ -74,10 +96,11 @@ const Home = () => {
         name="section0"
       >
         <video
-          autoPlay
           src={Vank_Short}
+          autoPlay
           loop
-          // muted={activeSection !== 'section0' ? true : false}
+          // muted
+          playsInline
           className="w-[100%] h-[100%] object-cover -z-10"
           // controls
         />
