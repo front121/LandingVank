@@ -39,8 +39,8 @@ const Header = ({ handleSetActive, activeSection }) => {
           : " bg-white shadow-2xl"
       }  text-black fixed top-0 left-0 right-0 z-50 transition-all duration-500`}
     >
-      <div className="px-7 min-h-[56px] flex justify-between items-center  xl:pl-20 2xl:pl-32 2xl:px-12">
-        <VankLogo />
+      <div className="px-7 h-[58px] flex justify-between items-center  xl:pl-20 2xl:pl-32 2xl:px-12">
+        <VankLogo className='w-[122px] h-[32px]'/>
         <ul className="relative lg:flex justify-center items-center text-lg 2xl:mr-28 hidden transition-all duration-300 ">
           <li
             className="font-medium text-[#000000] opacity-100 z-50 my-7 md:my-0 md:ml-2 text-sm lg:text-base flex flex-col items-center min-w-[84px] cursor-pointer"

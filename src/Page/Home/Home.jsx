@@ -1,12 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
-import {
-  Link as Links,
-  Button,
-  Element,
-  Events,
-  animateScroll as scroll,
-  scrollSpy,
-} from "react-scroll";
+import { Element, scroller } from "react-scroll";
+
 import ReactPlayer from "react-player";
 
 import Header from "./Header/Header";
@@ -36,7 +30,6 @@ import EliteCard from "../../assets/EliteCard.png";
 import SignatureBlack from "../../assets/SignatureBlack.png";
 import Coffe from "../../assets/Coffe.png";
 import Cintas from "../../assets/cintas.gif";
-import Insta from "../../assets/Insta.svg";
 import Link from "../../assets/Link.svg";
 import animation from "../../assets/v-vank-logo-animation 2.png";
 import Whatsapp from "../../assets/Whatsapp";
@@ -45,70 +38,89 @@ import Vank_Short_Audio from "../../assets/Animacion_Vank_Short_WP.mp3";
 import LogoAnimation from "../../assets/v-vank-logo-animation.gif";
 
 import "./Home.css";
+import IconAudio from "../../assets/IconAudio";
+import IconAudioOff from "../../assets/IconAudioOff";
+import Insta from "../../assets/Insta";
 
 const Home = () => {
   const [activeSection, setActiveSection] = useState("section0");
   const [playing, setPlaying] = useState(false);
+  const [isFooterVisible, setIsFooterVisible] = useState(false);
 
-  // const videoRef = useRef(null);
+  const videoRef = useRef(null);
   // const audioRef = useRef(null);
 
-  // useEffect(() => {
-  //   Events.scrollEvent.register("begin", function () {
-  //     console.log("begin", arguments);
-  //   });
-
-  //   Events.scrollEvent.register("end", function () {
-  //     console.log("end", arguments);
-  //   });
-
-  //   return () => {
-  //     Events.scrollEvent.remove("begin");
-  //     Events.scrollEvent.remove("end");
-  //   };
-  // }, []);
-
-  // useEffect(() => {
-  //   const audioElement = audioRef.current;
-
-  //   const da = document.getElementById("my_audio");
-  //   console.log(da);
-  //   // Reproducir el audio una vez que se monta el componente
-  //   setTimeout(() => {
-  //     document.getElementById("my_audio").play();
-  //   }, 8000);
-
-  //   return () => {
-  //     // Detener la reproducción del audio cuando el componente se desmonta
-  //     audioElement.pause();
-  //   };
-  // }, []);
+  useEffect(() => {
+    // localStorage.setItem("politica", false);
+    const polity = localStorage.getItem("politica", true);
+    const parse = JSON.parse(polity);
+    console.log(parse);
+    if (polity) {
+      const videoElement = videoRef.current;
+      // videoElement.muted = parse;
+      setPlaying(false);
+      console.log("sa");
+    }
+  }, []);
 
   const handleSetActive = (to) => {
-    setActiveSection(to);
+    console.log(to);
+  };
+
+  useEffect(() => {
+    function handleScroll() {
+      const footer = document.getElementById("footer");
+      if (footer) {
+        const { top, height } = footer.getBoundingClientRect();
+        const isVisible = top + height >= 0 && top <= window.innerHeight;
+        setIsFooterVisible(isVisible);
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const toggleMute = () => {
+    const videoElement = videoRef.current;
+    videoElement.muted = !videoElement.muted;
+    // console.log(videoElement.muted);
+    setPlaying(!playing);
   };
 
   return (
     <div className="w-full h-full">
       <Header handleSetActive={handleSetActive} activeSection={activeSection} />
-      <div
-        className="w-full h-full lg:h-[91vh] 2xl:h-screen mt-14 2xl:mt-0"
+      <Element
         name="section0"
+        className="w-full h-full lg:h-[91vh] 2xl:h-screen mt-14 2xl:mt-0 relative"
+        onSetActive
       >
         <video
+          ref={videoRef}
           src={Vank_Short}
           autoPlay
           loop
-          // muted
+          muted
           playsInline
           className="w-[100%] h-[100%] object-cover -z-10"
           // controls
         />
-      </div>
+        <div className="absolute right-5 top-5 2xl:right-10 2xl:top-20 bg-white bg-opacity-85 p-4 flex justify-center items-center rounded-full">
+          <button onClick={toggleMute}>
+            {playing ? (
+              <IconAudio className="w-5 h-5" />
+            ) : (
+              <IconAudioOff className="w-5 h-5" />
+            )}
+          </button>
+        </div>
+      </Element>
 
-      <div
-        className="w-full lg:max-w-[996px] p-12  lg:pt-20 pb-2 lg:pb-16 mx-auto flex sm:flex-row flex-col justify-center items-center bg-[#FFFFFF] relative"
+      <Element
         name="section1"
+        className="w-full lg:max-w-[996px] p-12  lg:pt-20 pb-2 lg:pb-16 mx-auto flex sm:flex-row flex-col justify-center items-center bg-[#FFFFFF] relative"
+        onSetActive={handleSetActive}
       >
         <div className="lg:w-1/2 flex flex-col justify-center items-start ">
           <div className="relative flex items-center mb-8 xl:w-[385px] xl:h-[378px] md:w-[300px] md:h-[200px] w-[300px] h-[200px] ">
@@ -147,9 +159,9 @@ const Home = () => {
           </div>
         </div>
         <div className="w-[133px] border border-[#EDEDED] absolute bottom-0" />
-      </div>
+      </Element>
 
-      <div
+      <Element
         className="w-[95%] hidden md:w-full lg:max-w-[996px] p-12  lg:pt-20 pb-0 lg:pb-16 mx-auto sm:flex  justify-center bg-transparent relative "
         name="section2"
       >
@@ -172,9 +184,9 @@ const Home = () => {
           <Arrow className="absolute -left-[30px] sm:-left-[149px] md:-left-[160px] lg:-left-[99px] md:top-2 lg:top-14 top-0 w-[40px] sm:w-[200px] h-[20px] md:h-[30px] lg:w-[106px] rotate-[18deg] md:rotate-[20deg] z-10" />
           <Money className="z-10" />
         </div>
-      </div>
+      </Element>
 
-      <div
+      <Element
         className="w-[95%] md:w-full lg:max-w-[996px]  lg:pt-20 pb-0 pt-10 lg:pb-16 mx-auto flex gap-4 justify-center items-center sm:hidden bg-transparent relative"
         name="section2"
       >
@@ -192,7 +204,7 @@ const Home = () => {
           <Arrow className="" />
           <Money className="z-10 w-full h-full" />
         </div>
-      </div>
+      </Element>
 
       <div
         className="w-[95%] md:w-full lg:max-w-[996px] pt-12 lg:pt-20 pb-2 mx-auto flex justify-center items-center"
@@ -461,7 +473,10 @@ const Home = () => {
         </div>
       </div>
 
-      <footer className="w-full h-[205px] md:h-[275px] bg-[#000000] relative flex justify-center items-center">
+      <footer
+        id="footer"
+        className="w-full h-[205px] md:h-[275px] bg-[#000000] relative flex justify-center items-center"
+      >
         <img
           src={Cintas}
           alt=""
@@ -498,9 +513,19 @@ const Home = () => {
         </section>
       </div>
 
-      <div className="fixed px-2 py-2 sm:px-3 sm:py-2 left-7 bottom-7 z-50 flex gap-4 bg-[#000000] rounded-[30px]">
-        <img src={Insta} alt="" className="" />
-        <img src={Link} alt="" className="" />
+      <div
+        className={`fixed px-2 py-2 sm:px-3 sm:py-2 left-7 bottom-7 z-50 transition-colors duration-300 flex gap-4 ${
+          isFooterVisible ? "bg-white" : "bg-[#000000]"
+        }  rounded-[30px]`}
+      >
+        <a
+          href="https://www.instagram.com/thisisvank/"
+          className="cursor-pointer"
+          // target="_blank"
+        >
+          <Insta className="text-red-600" />
+        </a>
+        <img src={Link} alt="" />
       </div>
     </div>
   );
